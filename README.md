@@ -2,7 +2,7 @@ Installation
 ====
 ```groovy
 dependencies {
-    compile 'com.mr.kaushalya.shadowcard:1.0'
+    implementation 'com.github.AkalankaKaushalya:Cardshadow:1.2'
 }
 
 
