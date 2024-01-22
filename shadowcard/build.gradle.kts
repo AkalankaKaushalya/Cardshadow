@@ -30,6 +30,9 @@ android {
     kotlinOptions {
         jvmTarget = "11"
     }
+    tasks.register<Wrapper>("wrapper") {
+        gradleVersion = "8.2"
+    }
 }
 
 dependencies {
