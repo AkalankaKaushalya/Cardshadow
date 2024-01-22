@@ -110,7 +110,7 @@ open class ShadowView @JvmOverloads constructor(
         )
         foregroundColor = a.getColor(
             R.styleable.ShadowView_foregroundColor,
-            ContextCompat.getColor(context!!, R.color.shadow_view_foreground_color_dark)
+            ContextCompat.getColor(context, R.color.shadow_view_foreground_color_dark)
         )
         backgroundClr = a.getColor(R.styleable.ShadowView_backgroundColor, Color.WHITE)
         shadowDx = a.getFloat(R.styleable.ShadowView_shadowDx, 0f)
@@ -373,7 +373,7 @@ open class ShadowView @JvmOverloads constructor(
 
     private fun getShadowMarginMax() =
         intArrayOf(shadowMarginLeft, shadowMarginTop, shadowMarginRight, shadowMarginBottom).max()
-            ?.toFloat() ?: 0f
+            .toFloat()
 
     fun drawForeground(canvas: Canvas) {
         foregroundDraw?.let {
@@ -470,17 +470,12 @@ open class ShadowView @JvmOverloads constructor(
     }
 
     private fun updateForegroundColor() {
-        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
-            (foregroundDraw as RippleDrawable?)?.setColor(ColorStateList.valueOf(foregroundColor))
-        } else {
-            foregroundDraw?.setColorFilter(foregroundColor, PorterDuff.Mode.SRC_ATOP)
-        }
+        (foregroundDraw as RippleDrawable?)?.setColor(ColorStateList.valueOf(foregroundColor))
     }
 
     override fun drawableHotspotChanged(x: Float, y: Float) {
         super.drawableHotspotChanged(x, y)
-        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP)
-            foregroundDraw?.let { it.setHotspot(x, y) }
+        foregroundDraw?.let { it.setHotspot(x, y) }
     }
 
     fun setShadowMargin(left: Int, top: Int, right: Int, bottom: Int) {

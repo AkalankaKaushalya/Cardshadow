@@ -8,7 +8,23 @@
     android:background="@color/white"
     tools:context=".MainActivity">
 
-    <com.mr.kaushalya.cardshadow.ShadowView
+<!--    <com.mr.kaushalya.shadowcard.ShadowView-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:layout_margin="25dp"-->
+<!--        app:shadowColor="@color/black"-->
+<!--        android:padding="10dp"-->
+<!--        app:cornerRadius="20dp"-->
+<!--        app:shadowMargin="58dp"-->
+<!--        app:shadowRadius="100dp">-->
+<!--        <TextView-->
+<!--            android:layout_width="match_parent"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:text="Google Developer Days Europe 2017 took place in Krakow, Poland. In this playlist, you can find all the recorded sessions from the event, across all tracks (Develop on Mobile, Mobile Web, Beyond Mobile, and Android)."/>-->
+<!--    </com.mr.kaushalya.shadowcard.ShadowView>-->
+
+
+    <com.mr.kaushalya.shadowcard.ShadowView
         android:id="@+id/shadow_view"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -18,14 +34,14 @@
         app:shadowColor="@color/black"
         android:padding="10dp"
         app:cornerRadius="20dp"
-        app:shadowMargin="58dp"
+        app:shadowMargin="28dp"
         app:shadowRadius="100dp"
         tools:ignore="MissingConstraints">
 
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Google Developer Days Europe 2017 took place in Krakow, Poland. In this playlist, you can find all the recorded sessions from the event, across all tracks (Develop on Mobile, Mobile Web, Beyond Mobile, and Android)."/>
-    </com.mr.kaushalya.cardshadow.ShadowView>
+            android:text="@string/google_developer_days_europe_2017_took_place_in_krakow_poland_in_this_playlist_you_can_find_all_the_recorded_sessions_from_the_event_across_all_tracks_develop_on_mobile_mobile_web_beyond_mobile_and_android"/>
+    </com.mr.kaushalya.shadowcard.ShadowView>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
